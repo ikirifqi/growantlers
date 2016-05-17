@@ -10,3 +10,6 @@ ActiveRecord::Base.connection.tables.each do |t|
   end
   ActiveRecord::Base.connection.execute(update_seq_sql)
 end
+
+puts 'Seeding admins...'
+Admin.create(:email => 'admin@growantlers.com', :password => 'antlers2016')
