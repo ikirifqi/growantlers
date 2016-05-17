@@ -1,14 +1,149 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Growantlers</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Growantlers Official Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Poppins:100,300,400,600,700" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  </head>
 
-<%= yield %>
-
-</body>
+  <body>
+    <div class="nav-container">
+      <a id="top"></a>
+      <nav class="absolute transparent">
+        <div class="nav-bar">
+          <div class="module left">
+            <a href="index.html">
+              <%= image_tag 'logo-light.png', :class => 'logo logo-light', :alt => 'Growantlers' %>
+              <%= image_tag 'logo-dark.png', :class => 'logo logo-dark', :alt => 'Growantlers' %>
+            </a>
+          </div>
+          <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+            <i class="ti-menu"></i>
+          </div>
+          <div class="module-group right">
+            <div class="module left">
+              <ul class="menu">
+                <li>
+                  <%= link_to 'Home', root_path %>
+                </li>
+                <li>
+                  <%= link_to 'Portfolio', root_path %>
+                </li>
+                <li>
+                  <%= link_to 'About', root_path %>
+                </li>
+              </ul>
+            </div>
+            <div class="module widget-handle language left">
+              <ul class="menu">
+                <li class="has-dropdown">
+                  <a href="#">ENG</a>
+                  <ul>
+                    <li>
+                      <a href="#">English</a>
+                    </li>
+                    <li>
+                      <a href="#">Indonesian</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="main-container">
+      <%= yield %>
+      <footer class="footer-1 bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <%= image_tag 'logo-light.png', :class => 'logo', :alt => 'Growantlers' %>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="widget">
+                <h6 class="title">Recent Posts</h6>
+                <hr>
+                <ul class="link-list recent-posts">
+                  <li>
+                    <a href="#">Hugging pugs is super trendy</a>
+                    <span class="date">February
+                      <span class="number">14, 2015</span>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="#">Spinning vinyl is oh so cool</a>
+                    <span class="date">February
+                      <span class="number">9, 2015</span>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="#">Superior theme design by pros</a>
+                    <span class="date">January
+                      <span class="number">27, 2015</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="widget">
+                <h6 class="title">Latest Updates</h6>
+                <hr>
+                <div class="twitter-feed">
+                  <div class="tweets-feed" data-widget-id="492085717044981760">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="widget">
+                <h6 class="title">Instagram</h6>
+                <hr>
+                <div class="instafeed" data-user-name="funsizeco">
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <span class="sub">&copy; Copyright 2015 - Medium Rare</span>
+            </div>
+            <div class="col-sm-6 text-right">
+              <ul class="list-inline social-list">
+                <li>
+                  <a href="#">
+                    <i class="ti-twitter-alt"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="ti-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="ti-dribbble"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="ti-vimeo-alt"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-sm fade-half back-to-top inner-link" href="#top">Top</a>
+      </footer>
+    </div>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
 </html>
