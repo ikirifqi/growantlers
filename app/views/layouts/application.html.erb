@@ -13,7 +13,7 @@
   <body>
     <div class="nav-container">
       <a id="top"></a>
-      <nav class="absolute transparent">
+      <nav class="<%= current_page?(root_path) ? 'absolute transparent' : '' %>">
         <div class="nav-bar">
           <div class="module left">
             <%= link_to root_path do %>
