@@ -16,10 +16,10 @@
       <nav class="absolute transparent">
         <div class="nav-bar">
           <div class="module left">
-            <a href="index.html">
+            <%= link_to root_path do %>
               <%= image_tag 'logo-light.png', :class => 'logo logo-light', :alt => 'Growantlers' %>
               <%= image_tag 'logo-dark.png', :class => 'logo logo-dark', :alt => 'Growantlers' %>
-            </a>
+            <%- end %>
           </div>
           <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
             <i class="ti-menu"></i>
@@ -31,10 +31,13 @@
                   <%= link_to 'Home', root_path %>
                 </li>
                 <li>
-                  <%= link_to 'Portfolio', root_path %>
+                  <%= link_to 'Portfolio', portfolio_path %>
                 </li>
                 <li>
-                  <%= link_to 'About', root_path %>
+                  <%= link_to 'Contact Us', contact_path %>
+                </li>
+                <li>
+                  <%= link_to 'About', current_page?(root_path) ? '#about' : root_path + '#about', :class => 'inner-link' %>
                 </li>
               </ul>
             </div>
