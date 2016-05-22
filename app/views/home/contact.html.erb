@@ -41,12 +41,12 @@
         </p>
       </div>
       <div class="col-sm-6 col-md-5 col-md-offset-1">
-        <form class="form-email" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly.">
-          <input type="text" class="validate-required" name="name" placeholder="Your Name" />
-          <input type="text" class="validate-required validate-email" name="email" placeholder="Email Address" />
-          <textarea class="validate-required" name="message" rows="4" placeholder="Message"></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+        <%= form_tag submit_contact_path, :class => 'form-email', 'data-success' => 'Thanks for your submission, we will be in touch shortly.', 'data-error' => 'Please fill all fields correctly.' do %>
+          <%= text_field_tag :name, '', :class => 'validate-required', :placeholder => 'Your full name' %>
+          <%= text_field_tag :email, '', :class => 'validate-required validate-email', :placeholder => 'Email address' %>
+          <%= text_area_tag :message, '', :class => 'validate-required', :rows => 4, :placeholder => 'Message' %>
+          <%= submit_tag 'Send Message' %>
+        <%- end %>
       </div>
     </div>
   </div>

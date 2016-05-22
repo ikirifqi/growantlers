@@ -79,4 +79,22 @@ Rails.application.configure do
 
   # Use environment variable on production
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+    # SMTP settings for gmail
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'https://growantlers.herokuapp.com/' }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 465,
+    :domain => "gmail.com",
+    :user_name => "testing.kiranatama",
+    :password => "Kiranatama104",
+    :authentication => "login",
+    :ssl => true,
+    :tls => true,
+    :enable_starttls_auto => true
+  }
 end
