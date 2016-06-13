@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -20,8 +20,8 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# A ruby web server built for concurrency
-gem 'puma'
+# Use unicorn as web server
+gem 'unicorn'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
@@ -34,6 +34,8 @@ end
 
 # Development gems
 group :development, :test do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
   gem 'sqlite3'                         # use sqlite3 as the database in development mode
   gem 'byebug'                          # debugging in Ruby 2
   gem 'web-console', '~> 2.0'           # rails Console on the Browser

@@ -16,6 +16,6 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
   pool: 5
-  database: growantlers_db
+  database: growantlers_production
   username: growantlers
   password: <%= ENV['GROWANTLERS_DATABASE_PASSWORD'] %>
