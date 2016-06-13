@@ -26,6 +26,9 @@ gem 'unicorn'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+# Simple Rails app configuration
+gem 'figaro'
+
 # Specific production gems
 group :production do
   gem 'pg'                              # Use postgresql as the database for Active Record
@@ -35,7 +38,7 @@ end
 # Development gems
 group :development, :test do
   gem 'capistrano'
-  gem 'rvm-capistrano'
+  gem 'rvm-capistrano',  require: false
   gem 'sqlite3'                         # use sqlite3 as the database in development mode
   gem 'byebug'                          # debugging in Ruby 2
   gem 'web-console', '~> 2.0'           # rails Console on the Browser
