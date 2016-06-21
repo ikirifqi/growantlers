@@ -1,11 +1,16 @@
 class HomeController < ApplicationController
   def index
+    @teams = Team.all
+    @portfolios = Portfolio.order('created_at DESC').limit(6)
   end
 
   def portfolio
+    @portfolios = Portfolio.all
   end
 
   def show_portfolio
+    @portfolio = params[:slug_id]
+    @portfolio = Portfolio.find_by_slug_id(@portfolio)
   end
 
   def contact

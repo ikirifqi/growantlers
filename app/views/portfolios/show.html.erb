@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @portfolio.title %>
+</p>
+
+<p>
+  <strong>Brief description:</strong>
+  <%= @portfolio.brief_description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @portfolio.client %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @portfolio.date.strftime('%b %Y') %>
+</p>
+
+<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+<%= link_to 'Back', portfolios_path %> |
+<%= link_to 'View Public', public_show_portfolio_path(@portfolio.slug_id) %>

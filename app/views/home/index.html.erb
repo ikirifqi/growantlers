@@ -9,7 +9,7 @@
         <h4 class="mb56 mb-xs-24">
           Foundry is a digital design collective, tailoring experiences in web and print for clients all around the globe.
         </h4>
-        <a class="btn btn-lg btn-white mb0" href="#">Make An Enquiry</a>
+        <%= link_to 'Contact Us', contact_path, :class => 'btn btn-lg btn-white mb0' %>
       </div>
     </div><!--end of row-->
   </div><!--end of container-->
@@ -190,53 +190,17 @@
         <h2 class="uppercase mb8">About Us</h2>
         <p class="lead mb0">A descriptive subtitle for your page.</p>
       </div>
-      <div class="col-md-6 text-right">
-        <ol class="breadcrumb breadcrumb-2">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Pages</a>
-          </li>
-          <li class="active">About Us</li>
-        </ol>
-      </div>
     </div>
   </div>
 </section>
 <section class="pb0">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5">
+      <div class="col-sm-12">
         <h4 class="uppercase">Diversity & Difference</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
         </p>
-      </div>
-      <div class="col-sm-7">
-        <h4 class="uppercase">Service Spread</h4>
-        <div class="progress-bars">
-          <div class="progress progress-1">
-            <div class="progress-bar" data-progress="90">
-              <span class="title">Branding</span>
-            </div>
-          </div>
-          <div class="progress progress-1">
-            <div class="progress-bar" data-progress="70">
-              <span class="title">E-Commerce</span>
-            </div>
-          </div>
-          <div class="progress progress-1">
-            <div class="progress-bar" data-progress="60">
-              <span class="title">Websites</span>
-            </div>
-          </div>
-          <div class="progress progress-1">
-            <div class="progress-bar" data-progress="50">
-              <span class="title">iOS Apps</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -244,42 +208,20 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <div class="image-tile outer-title text-center">
-          <%= image_tag 'team.jpg', :alt => 'Growantlers Team' %>
-          <div class="title mb16">
-            <h5 class="uppercase mb0">Sally Marsh</h5>
-            <span>Creative Director</span>
+      <%- @teams.each do |team| %>
+        <div class="col-md-3 col-sm-6">
+          <div class="image-tile outer-title text-center">
+            <%= image_tag 'team.jpg', :alt => 'Growantlers - ' + team.name %>
+            <div class="title mb16">
+              <h5 class="uppercase mb0"><%= team.name %></h5>
+              <span><%= team.position %></span>
+            </div>
+            <p class="mb0">
+              <%= team.description %>
+            </p>
           </div>
-          <p class="mb0">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-          </p>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="image-tile outer-title text-center">
-          <%= image_tag 'team.jpg', :alt => 'Growantlers Team' %>
-          <div class="title mb16">
-            <h5 class="uppercase mb0">Tim Foley</h5>
-            <span>iOS Developer</span>
-          </div>
-          <p class="mb0">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="image-tile outer-title text-center">
-          <%= image_tag 'team.jpg', :alt => 'Growantlers Team' %>
-          <div class="title mb16">
-            <h5 class="uppercase mb0">Jake Robbins</h5>
-            <span>Brand Director</span>
-          </div>
-          <p class="mb0">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-          </p>
-        </div>
-      </div>
+      <%- end %>
     </div>
   </div>
 </section>

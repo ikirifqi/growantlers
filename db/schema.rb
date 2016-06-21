@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517104329) do
+ActiveRecord::Schema.define(version: 20160621165913) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -27,5 +27,37 @@ ActiveRecord::Schema.define(version: 20160517104329) do
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "main_image"
+    t.string   "secondary_image"
+    t.string   "optional_image"
+    t.string   "title"
+    t.text     "main_description"
+    t.string   "client"
+    t.string   "role"
+    t.string   "agency"
+    t.date     "date"
+    t.text     "left_description"
+    t.text     "right_description"
+    t.integer  "team_id"
+    t.string   "footer_title"
+    t.text     "footer_description"
+    t.string   "slug_id"
+    t.string   "brief_description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "portfolios", ["team_id"], name: "index_portfolios_on_team_id"
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.string   "position"
+    t.text     "description"
+    t.string   "photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end

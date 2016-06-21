@@ -1,0 +1,21 @@
+<p>
+  <%= image_tag 'team.jpg', :alt => 'Growantlers - ' + @team.name, :class => 'img-responsive' %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @team.position %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @team.description %>
+</p>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
