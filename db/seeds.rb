@@ -7,10 +7,10 @@ puts 'Purging tables...'
 ActiveRecord::Base.connection.tables.each do |t|
   if Rails.env.development?
     update_seq_sql = "UPDATE sqlite_sequence SET seq = 0 WHERE name = '#{t}';"
+    ActiveRecord::Base.connection.execute(update_seq_sql)
   else
-    update_seq_sql = "ALTER TABLE #{t} AUTO_INCREMENT = 1"
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
   end
-  ActiveRecord::Base.connection.execute(update_seq_sql)
 end
 
 puts 'Seeding admins...'
