@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def portfolio
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.order('created_at DESC')
   end
 
   def show_portfolio
