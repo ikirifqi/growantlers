@@ -1,6 +1,6 @@
 <section class="fullscreen image-bg parallax">
   <div class="background-image-holder">
-    <%= image_tag 'project-case-study-4.jpg', :alt => 'Feature Image', :class => 'background-image' %>
+    <%= image_tag @portfolio.main_image_url.nil? ? 'project-case-study-4.jpg' : @portfolio.main_image_url, :alt => 'Feature Image', :class => 'background-image' %>
   </div>
 </section>
 <section>
@@ -31,7 +31,7 @@
 </section>
 <section class="fullscreen image-bg parallax">
   <div class="background-image-holder">
-    <%= image_tag 'project-case-study-1.jpg', :alt => 'Feature Image', :class => 'background-image' %>
+    <%= image_tag @portfolio.secondary_image_url.nil? ? 'project-case-study-1.jpg' : @portfolio.secondary_image_url, :alt => 'Feature Image', :class => 'background-image' %>
   </div>
 </section>
 <section>
@@ -52,12 +52,9 @@
     </div>
   </div>
 </section>
-<section class="p0">
-  <div class="col-sm-6 p0">
-    <%= image_tag 'project-case-study-2.jpg', :alt => 'Project', :class => 'p0 col-xs-12' %>
-  </div>
-  <div class="col-sm-6 p0">
-    <%= image_tag 'project-case-study-3.jpg', :alt => 'Project', :class => 'p0 col-xs-12' %>
+<section class="fullscreen image-bg parallax">
+  <div class="background-image-holder">
+    <%= image_tag @portfolio.optional_image_url.nil? ? 'project-case-study-2.jpg' : @portfolio.optional_image_url, :alt => 'Feature Image', :class => 'background-image' %>
   </div>
 </section>
 <section>

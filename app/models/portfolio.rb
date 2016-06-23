@@ -1,4 +1,8 @@
 class Portfolio < ActiveRecord::Base
+  mount_uploader :main_image, ImageUploader
+  mount_uploader :secondary_image, ImageUploader
+  mount_uploader :optional_image, ImageUploader
+
   belongs_to :team
 
   before_save :generate_slug_id

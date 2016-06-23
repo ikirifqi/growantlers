@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     @teams = Team.all
     @portfolios = Portfolio.order('created_at DESC').limit(6)
+    @portfolio_sizes = [:portrait, :landscape, :portrait, :portrait, :landscape, :landscape]
   end
 
   def portfolio

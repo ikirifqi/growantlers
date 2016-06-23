@@ -19,7 +19,7 @@
 <%- @portfolios.each do |portfolio| %>
   <section class="image-bg bg-dark parallax overlay pt120 pb120">
     <div class="background-image-holder">
-      <%= image_tag 'project-single-3.jpg', :alt => 'Growantlers Portfolio - ' + portfolio.title, :class => 'background-image' %>
+      <%= image_tag portfolio.main_image_url.nil? ? 'project-single-3.jpg' : portfolio.main_image_url, :alt => 'Growantlers Portfolio - ' + portfolio.title, :class => 'background-image' %>
     </div>
     <div class="container">
       <div class="row">
