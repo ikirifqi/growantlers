@@ -1,5 +1,7 @@
 <h1>Editing Team</h1>
 
+<%= image_tag @team.photo_url.nil? ? 'team.jpg' : @team.photo_url(:team_photo), :alt => 'Growantlers - ' + @team.name, :class => 'img-responsive img-thumbnail' %>
+
 <%= render 'form' %>
 
 <%= link_to 'Show', @team %> |

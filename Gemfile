@@ -29,6 +29,12 @@ gem 'devise'
 # Simple Rails app configuration
 gem 'figaro'
 
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+gem 'carrierwave'
+
+# Mini replacement for RMagick http://mini_magick.rubyforge.org
+gem 'mini_magick'
+
 # Specific production gems
 group :production do
   gem 'pg'                              # Use postgresql as the database for Active Record

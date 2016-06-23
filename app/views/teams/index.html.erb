@@ -14,7 +14,7 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><%= image_tag 'team.jpg', :alt => 'Growantlers - ' + team.name, :class => 'img-responsive' %></td>
+        <td><%= image_tag team.photo_url.nil? ? 'team.jpg' : team.photo_url(:team_photo), :class => 'img-responsive img-thumbnail' %></td>
         <td><%= team.name %></td>
         <td><%= team.position %></td>
         <td><%= team.description %></td>

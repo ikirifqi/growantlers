@@ -77,6 +77,12 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     code_analyzer (0.4.5)
       sexp_processor
     coderay (1.1.1)
@@ -154,6 +160,8 @@ GEM
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
+    mimemagic (0.3.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -301,6 +309,7 @@ DEPENDENCIES
   byebug
   capistrano
   capybara!
+  carrierwave
   cucumber-rails
   database_cleaner
   devise
@@ -312,6 +321,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   lol_dba
+  mini_magick
   pg
   pry
   pry-rails

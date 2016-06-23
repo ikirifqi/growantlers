@@ -1,5 +1,5 @@
 <p>
-  <%= image_tag 'team.jpg', :alt => 'Growantlers - ' + @team.name, :class => 'img-responsive' %>
+  <%= image_tag @team.photo_url.nil? ? 'team.jpg' : @team.photo_url(:team_photo), :class => 'img-responsive img-thumbnail' %>
 </p>
 
 <p>

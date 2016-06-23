@@ -211,7 +211,7 @@
       <%- @teams.each do |team| %>
         <div class="col-md-3 col-sm-6">
           <div class="image-tile outer-title text-center">
-            <%= image_tag 'team.jpg', :alt => 'Growantlers - ' + team.name %>
+            <%= image_tag team.photo_url.nil? ? 'team.jpg' : team.photo_url(:team_photo), :alt => 'Growantlers - ' + team.name %>
             <div class="title mb16">
               <h5 class="uppercase mb0"><%= team.name %></h5>
               <span><%= team.position %></span>
