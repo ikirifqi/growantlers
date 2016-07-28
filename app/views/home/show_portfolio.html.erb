@@ -52,11 +52,13 @@
     </div>
   </div>
 </section>
-<section class="fullscreen image-bg parallax">
-  <div class="background-image-holder">
-    <%= image_tag @portfolio.optional_image_url.nil? ? 'project-case-study-2.jpg' : @portfolio.optional_image_url, :alt => 'Feature Image', :class => 'background-image' %>
-  </div>
-</section>
+<%- if @portfolio.optional_image_visibility %>
+  <section class="fullscreen image-bg parallax">
+    <div class="background-image-holder">
+      <%= image_tag @portfolio.optional_image_url.nil? ? 'project-case-study-2.jpg' : @portfolio.optional_image_url, :alt => 'Feature Image', :class => 'background-image' %>
+    </div>
+  </section>
+<%- end %>
 <section>
   <div class="container">
     <div class="row mb40">

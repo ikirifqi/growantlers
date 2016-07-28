@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621165913) do
+ActiveRecord::Schema.define(version: 20160728022519) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20160621165913) do
     t.text     "footer_description"
     t.string   "slug_id"
     t.string   "brief_description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "optional_image_visibility"
   end
 
   add_index "portfolios", ["team_id"], name: "index_portfolios_on_team_id"
