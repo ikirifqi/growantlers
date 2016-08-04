@@ -23,7 +23,7 @@
         <%- elsif @portfolio_sizes[index] == :landscape %>
           <%- portfolio_image = portfolio.main_image_url(:landscape).nil? ? 'project-single-2.jpg' : portfolio.main_image_url(:landscape) %>
         <%- end %>
-        <div class="col-md-4 col-sm-6 masonry-item project" data-filter="People">
+        <div class="col-md-4 col-sm-6 masonry-item project <%= @portfolio_classes[index] %>" data-filter="People">
           <div class="image-tile inner-title hover-reveal text-center">
             <%= link_to public_show_portfolio_path(portfolio.slug_id) do %>
               <%= image_tag portfolio_image, :alt => 'Growantlers Portfolio - ' + portfolio.title %>
@@ -47,7 +47,7 @@
     </div>
   </div>
 </section>
-<section>
+<section class="workscope">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6">
